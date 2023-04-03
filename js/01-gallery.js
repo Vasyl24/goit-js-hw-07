@@ -24,7 +24,7 @@ function onClick(evt) {
     instance.show();
 
     if (basicLightbox.visible()) {
-      console.log('I`m visible');
+      // console.log('I`m visible');
 
       galleryList.addEventListener('keydown', closeGallery);
     }
@@ -32,6 +32,7 @@ function onClick(evt) {
     function closeGallery(evt) {
       if (evt.code === 'Escape') {
         instance.close();
+        galleryList.removeEventListener('keydown', closeGallery);
       }
     }
   }
